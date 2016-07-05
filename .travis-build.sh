@@ -27,4 +27,6 @@ $CHECKERFRAMEWORK/checker/bin/infer-and-annotate.sh \
     -AprintErrorStack \
     `find java/src/plume/ -name "*.java"`
 
+## TODO: use interdiff to compare this to a goal set of diffs.
+## The goal set needs to be checked into this repository.
 git diff
