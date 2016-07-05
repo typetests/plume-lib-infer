@@ -9,6 +9,7 @@ jdk:
 #  - oraclejdk7
   - openjdk7
 
-notifications:
-  email:
-    - checker-framework-dev@googlegroups.com 
+## Temporarily disable, until the job is passing.
+# notifications:
+#   email:
+#     - checker-framework-dev@googlegroups.com 
