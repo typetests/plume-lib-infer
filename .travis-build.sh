@@ -22,7 +22,9 @@ cd $ROOT/plume-lib
 # (cd java && find \( -name '*.java' -o -name '*.jpp' \) -exec perl -i -00pe's/\/\*>>>.*?\*\/\n*//sg;' {} +)
 
 make jar
-$CHECKERFRAMEWORK/checker/bin/infer-and-annotate.sh \
+
+# TODO: infer regex annotations, once whole-program inference works for regex
+time $CHECKERFRAMEWORK/checker/bin/infer-and-annotate.sh \
     "nullness,interning,formatter,signature,lock" java/plume.jar:java/lib/junit-4.12.jar \
     -AprintErrorStack \
     `find java/src/plume/ -name "*.java"`
