@@ -11,11 +11,14 @@ set -e
 export CHECKERFRAMEWORK=$ROOT/checker-framework
 
 ## Obtain plume-lib
+# rm command is handy when running this script by hand
+rm -rf $ROOT/plume-lib
 (cd $ROOT && git clone https://github.com/mernst/plume-lib.git)
 
 cd $ROOT/plume-lib
 
 # Remove annotations in comments
+# TODO: should I retain @Pure and maybe a few others?
 (cd java && find \( -name '*.java' -o -name '*.jpp' \) -exec perl -i -00pe's/\/\*@[A-Z][^*]*?[a-z)]\*\/[ \n]*//sg;' {} +)
 ## Retain import statements in comments, to reduce the size of the diffs
 # # Remove import statements in comments
