@@ -18,8 +18,8 @@ rm -rf $ROOT/plume-lib
 cd $ROOT/plume-lib
 
 # Remove annotations in comments
-# TODO: should I retain @Pure and maybe a few others?
-(cd java && find \( -name '*.java' -o -name '*.jpp' \) -exec perl -i -00pe's/\/\*@[A-Z][^*]*?[a-z)]\*\/[ \n]*//sg;' {} +)
+# TODO: What other annotations to retain? @RequiresNonNull, others?
+(cd java && find \( -name '*.java' -o -name '*.jpp' \) -exec perl -i -00pe's/\/\*(?!\@Pure|\@SideEffectFree|\@Deterministic)\@[A-Z][^*]*?[a-z)]\*\/[ \n]*//sg;' {} +)
 ## Retain import statements in comments, to reduce the size of the diffs
 # # Remove import statements in comments
 # (cd java && find \( -name '*.java' -o -name '*.jpp' \) -exec perl -i -00pe's/\/\*>>>.*?\*\/\n*//sg;' {} +)
