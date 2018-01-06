@@ -5,7 +5,7 @@ ROOT=$TRAVIS_BUILD_DIR/..
 set -e
 
 ## Build Checker Framework
-(cd $ROOT && git clone https://github.com/typetools/checker-framework.git)
+(cd $ROOT && git clone https://github.com/typetools/checker-framework.git) || (cd $ROOT && git clone https://github.com/typetools/checker-framework.git)
 # This also builds annotation-tools and jsr308-langtools
 (cd $ROOT/checker-framework/ && ./.travis-build-without-test.sh downloadjdk)
 export CHECKERFRAMEWORK=$ROOT/checker-framework
@@ -13,7 +13,7 @@ export CHECKERFRAMEWORK=$ROOT/checker-framework
 ## Obtain plume-lib
 # rm command is handy when running this script by hand
 rm -rf $ROOT/plume-lib
-(cd $ROOT && git clone https://github.com/mernst/plume-lib.git)
+(cd $ROOT && git clone https://github.com/mernst/plume-lib.git) || (cd $ROOT && git clone https://github.com/mernst/plume-lib.git)
 
 cd $ROOT/plume-lib
 
