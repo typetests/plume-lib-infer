@@ -2,7 +2,7 @@ language: java
 
 script: travis_wait 120 ./.travis-build.sh
 
-# Enable Gradle caching
+## If the cache gets corrupted, clean it at https://travis-ci.com/ORG/REPO/caches .
 before_cache:
   - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
   - rm -fr $HOME/.gradle/caches/*/plugin-resolution/
