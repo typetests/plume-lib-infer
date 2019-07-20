@@ -1,5 +1,5 @@
 #!/bin/bash
-ROOT=$TRAVIS_BUILD_DIR/..
+ROOT="$( cd "$(dirname "$0")"/.. ; pwd -P )"
 
 # Fail the whole script if any command fails
 set -e
