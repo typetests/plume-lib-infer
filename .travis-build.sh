@@ -6,7 +6,7 @@ set -e
 
 ## Build Checker Framework
 (cd $ROOT && git clone https://github.com/typetools/checker-framework.git) || (cd $ROOT && git clone https://github.com/typetools/checker-framework.git)
-# This also builds annotation-tools and jsr308-langtools
+# This also builds annotation-tools
 (cd $ROOT/checker-framework/ && ./.travis-build-without-test.sh downloadjdk)
 export CHECKERFRAMEWORK=$ROOT/checker-framework
 
